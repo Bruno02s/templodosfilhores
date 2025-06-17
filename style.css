@@ -146,7 +146,7 @@ header h1 {
     min-height: 100%;
     width: auto;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
     z-index: 0;
 }
 
@@ -277,6 +277,7 @@ footer .whatsapp-link:hover {
     h1 { font-size: 2.4rem; }
     h2.section-title { font-size: 2.1rem; }
     .hero-phrase p { font-size: 1.9rem; }
+    .hero-phrase  { min-height: 0vh; min-height: 40vh; }
     .breeds-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
 }
 
@@ -288,7 +289,7 @@ footer .whatsapp-link:hover {
     .royal-canin-button { padding: 8px 15px; font-size: 0.85rem; }
 
     body { padding-top: 100px; }
-    .hero-phrase { padding: 60px 0; margin-top: 0; }
+    .hero-phrase { padding: 60px 0; margin-top: 0; min-height: 40vh; }
     .hero-phrase p { font-size: 1.7rem; }
 
     h2.section-title { font-size: 1.8rem; margin-bottom: 40px; }
@@ -302,8 +303,14 @@ footer .whatsapp-link:hover {
     html { font-size: 14px; }
     header h1 { font-size: 1.3rem; }
     body { padding-top: 90px; }
-    .hero-phrase p { font-size: 1.5rem; }
+    .hero-phrase p { font-size: 1.3rem; }
+    .hero-phrase  { min-height: 0vh; }
     h2.section-title { font-size: 1.6rem; }
     .royal-canin-button { width: 100%; text-align: center; margin-top: 5px;}
     footer .whatsapp-link { width: 90%; }
+
+    .hero-image {
+        width: 100%;
+        height: auto;
+    }
 }
