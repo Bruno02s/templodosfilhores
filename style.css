@@ -146,7 +146,7 @@ header h1 {
     min-height: 100%;
     width: auto;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
     z-index: 0;
 }
 
@@ -302,8 +302,13 @@ footer .whatsapp-link:hover {
     html { font-size: 14px; }
     header h1 { font-size: 1.3rem; }
     body { padding-top: 90px; }
-    .hero-phrase p { font-size: 1.5rem; }
+    .hero-phrase p { font-size: 1.3rem; }
     h2.section-title { font-size: 1.6rem; }
     .royal-canin-button { width: 100%; text-align: center; margin-top: 5px;}
     footer .whatsapp-link { width: 90%; }
+
+    .hero-image {
+        width: 100%;
+        height: auto;
+    }
 }
