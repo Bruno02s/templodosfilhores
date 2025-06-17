@@ -1,133 +1,167 @@
-/* General Reset and Base Styles */
+/* Global Resets and Modern Base Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.7;
-    background-color: #f8f9fa; /* Light gray background */
-    color: #343a40; /* Dark gray text */
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    padding-top: 80px; /* Space for fixed header */
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Modern, clean font stack */
+    line-height: 1.8;
+    background-color: #ffffff; /* Cleaner white background */
+    color: #4A4A4A; /* Softer dark gray for text */
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Header */
+/* --- Header --- */
 header {
-    background-color: #007bff; /* Primary blue */
-    color: #ffffff;
-    padding: 15px 0;
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white for a modern feel */
+    color: #333;
+    padding: 20px 5%; /* Percentage-based padding for fluidity */
     text-align: center;
-    position: fixed; /* Fixed header */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     display: flex;
-    justify-content: space-around; /* Space between title and button */
+    justify-content: space-between; /* Space between title and button */
     align-items: center;
+    transition: padding 0.3s ease;
 }
 
 header h1 {
-    font-size: 2.5em;
+    font-size: 2.2em; /* Slightly reduced for balance */
     margin: 0;
-    font-weight: 600;
+    font-weight: 700; /* Bolder for kennel name */
+    color: #0056b3; /* Primary brand color */
 }
 
 .royal-canin-button {
-    background-color: #ffc107; /* Royal Canin yellow accent */
+    background-color: #ffc107; /* Royal Canin yellow */
     color: #333;
-    padding: 10px 20px;
+    padding: 12px 25px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 25px; /* More rounded button */
     font-weight: bold;
-    transition: background-color 0.3s ease;
-    border: 1px solid #e0a800; /* Slightly darker border for the button */
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .royal-canin-button:hover {
-    background-color: #e0a800; /* Darker yellow on hover */
+    background-color: #e0a800;
     color: #fff;
+    transform: translateY(-2px); /* Subtle lift effect */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
-/* Main Content Sections */
+/* --- General Section Styling --- */
 section {
-    padding: 40px 0;
+    padding: 80px 5%; /* More vertical padding, percentage for horizontal */
     text-align: center;
 }
 
-section h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #0056b3; /* Darker blue for section titles */
+section:nth-of-type(odd) {
+     background-color: #f8f9fa; /* Alternate section background */
 }
 
+section:nth-of-type(even) {
+     background-color: #ffffff;
+}
+
+
+.section-title {
+    font-size: 2.8em;
+    margin-bottom: 40px;
+    color: #004085; /* Darker, more serious blue */
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after { /* Subtle underline accent */
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #ffc107; /* Accent color */
+    margin: 10px auto 0;
+}
+
+/* --- Phrase Section --- */
 .phrase {
-    background-color: #ffffff; /* White background for this section */
-    padding: 30px 20px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    padding: 60px 5%; /* Custom padding */
+    background-color: #007bff; /* Primary blue background */
+    color: #ffffff;
 }
 
 .phrase p {
-    font-size: 1.5em;
+    font-size: 1.8em; /* Larger, more impactful */
     font-style: italic;
-    color: #555;
+    font-weight: 300; /* Lighter weight for italic phrase */
+    max-width: 800px;
+    margin: 0 auto;
 }
 
+/* --- Breeds Info Section --- */
 .breeds-info {
-    background-color: #e9ecef; /* Slightly off-white for this section */
-    padding: 40px 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    /* Uses default alternating background */
 }
 
 .breeds-info ul {
     list-style: none;
     padding: 0;
-    margin-bottom: 30px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Spacing between breed items */
 }
 
 .breeds-info ul li {
     background-color: #ffffff;
     color: #333;
-    padding: 12px;
-    margin-bottom: 8px;
-    border-radius: 5px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    display: inline-block; /* Make LIs flow nicely */
-    margin-right: 8px;
-    font-size: 1.1em;
+    padding: 20px 30px; /* More padding */
+    border-radius: 10px; /* Softer rounding */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Softer, more spread out shadow */
+    font-size: 1.15em; /* Slightly larger font */
+    font-weight: 500;
+    transition: all 0.3s ease;
+    flex-basis: calc(33.333% - 40px); /* Aim for 3 per row, adjusting for gap */
+    min-width: 280px; /* Minimum width for smaller viewports before wrapping */
 }
 
-.breeds-info h2 + p { /* Style for delivery conditions paragraph */
+.breeds-info ul li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.breeds-info .delivery-conditions h2 { /* Targeting Condições de Entrega specifically if needed */
+    /* Reuses .section-title styling if h2 has class="section-title" */
+}
+
+.breeds-info .delivery-conditions p {
     font-size: 1.1em;
-    max-width: 700px;
-    margin: 0 auto; /* Center the paragraph */
-    line-height: 1.8;
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.9;
+    color: #5a6268; /* Slightly lighter text for paragraphs */
 }
 
 
-/* Footer */
+/* --- Footer --- */
 footer {
     background-color: #343a40; /* Dark footer */
-    color: #f8f9fa; /* Light text in footer */
+    color: #f8f9fa;
     text-align: center;
-    padding: 25px 0;
-    margin-top: auto; /* Pushes footer to the bottom */
+    padding: 50px 5%; /* More padding */
 }
 
 footer p {
@@ -136,77 +170,90 @@ footer p {
 }
 
 footer a {
-    color: #ffc107; /* Yellow link in footer */
+    color: #ffc107; /* Yellow link */
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 footer a:hover {
+    color: #fff; /* Lighter yellow on hover */
     text-decoration: underline;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        padding: 20px 0;
-    }
-
-    header h1 {
-        font-size: 2em;
-        margin-bottom: 15px;
-    }
-
-    .royal-canin-button {
-        padding: 12px 25px;
-        font-size: 1em;
-    }
-
-    body {
-        padding-top: 120px; /* Adjust for taller fixed header on mobile */
-    }
-
-    .phrase p {
-        font-size: 1.3em;
-    }
-
-    section h2 {
-        font-size: 1.8em;
-    }
-
-    .breeds-info ul li {
-        display: block; /* Stack list items on smaller screens */
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-}
-
-@media (max-width: 480px) {
+/* --- Responsive Design --- */
+@media (max-width: 992px) { /* Tablets */
     header h1 {
         font-size: 1.8em;
     }
-
-    body {
-        padding-top: 110px; /* Adjust for fixed header */
-    }
-
     .royal-canin-button {
         padding: 10px 20px;
     }
+    .section-title {
+        font-size: 2.4em;
+    }
+    .phrase p {
+        font-size: 1.5em;
+    }
+    .breeds-info ul li {
+        flex-basis: calc(50% - 20px); /* 2 per row */
+    }
+}
 
+@media (max-width: 768px) { /* Large Mobiles / Small Tablets */
+    header {
+        flex-direction: column;
+        padding: 15px 5%;
+    }
+    header h1 {
+        margin-bottom: 15px;
+    }
+    body {
+        padding-top: 120px; /* Adjust for taller fixed header */
+    }
+    .section-title {
+        font-size: 2em;
+    }
+    .phrase p {
+        font-size: 1.3em;
+    }
+    .breeds-info ul li {
+        flex-basis: calc(100% - 20px); /* 1 per row */
+        min-width: auto; /* Reset min-width */
+    }
+}
+
+@media (max-width: 480px) { /* Small Mobiles */
+    body {
+        padding-top: 110px; /* Adjust for header */
+    }
+    header h1 {
+        font-size: 1.6em;
+    }
+    .royal-canin-button {
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
+    .section-title {
+        font-size: 1.8em;
+    }
     .phrase p {
         font-size: 1.2em;
     }
-
-    section h2 {
-        font-size: 1.6em;
+    .breeds-info ul li {
+        padding: 15px 20px;
     }
-
-     .breeds-info h2 + p {
-        font-size: 1em;
+    footer {
+        padding: 40px 5%;
     }
-
     footer p {
         font-size: 1em;
     }
+}
+
+/* Utility class for content within sections if needed for max-width */
+.content-container {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
 }
