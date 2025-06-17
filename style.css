@@ -131,14 +131,25 @@ header h1 {
 
 /* --- Hero Phrase --- */
 .hero-phrase {
-    background-color: var(--cor-marrom-escuro);
+    background: url('cachorros.jpg') center/cover no-repeat;
     color: var(--cor-branco);
     padding: 100px 0;
     text-align: center;
     margin-top: 70px;
+    position: relative;
+}
+
+.hero-phrase::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0,0,0,0.5); /* Escurece a imagem para realçar o texto */
+    z-index: 0;
 }
 
 .hero-phrase p {
+    position: relative;
+    z-index: 1;
     font-family: 'Playfair Display', serif;
     font-size: 2.2rem;
     font-style: italic;
