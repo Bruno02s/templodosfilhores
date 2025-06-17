@@ -1,0 +1,212 @@
+/* General Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7;
+    background-color: #f8f9fa; /* Light gray background */
+    color: #343a40; /* Dark gray text */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 80px; /* Space for fixed header */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #007bff; /* Primary blue */
+    color: #ffffff;
+    padding: 15px 0;
+    text-align: center;
+    position: fixed; /* Fixed header */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-around; /* Space between title and button */
+    align-items: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    font-weight: 600;
+}
+
+.royal-canin-button {
+    background-color: #ffc107; /* Royal Canin yellow accent */
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: 1px solid #e0a800; /* Slightly darker border for the button */
+}
+
+.royal-canin-button:hover {
+    background-color: #e0a800; /* Darker yellow on hover */
+    color: #fff;
+}
+
+/* Main Content Sections */
+section {
+    padding: 40px 0;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #0056b3; /* Darker blue for section titles */
+}
+
+.phrase {
+    background-color: #ffffff; /* White background for this section */
+    padding: 30px 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.phrase p {
+    font-size: 1.5em;
+    font-style: italic;
+    color: #555;
+}
+
+.breeds-info {
+    background-color: #e9ecef; /* Slightly off-white for this section */
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.breeds-info ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.breeds-info ul li {
+    background-color: #ffffff;
+    color: #333;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    display: inline-block; /* Make LIs flow nicely */
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+.breeds-info h2 + p { /* Style for delivery conditions paragraph */
+    font-size: 1.1em;
+    max-width: 700px;
+    margin: 0 auto; /* Center the paragraph */
+    line-height: 1.8;
+}
+
+
+/* Footer */
+footer {
+    background-color: #343a40; /* Dark footer */
+    color: #f8f9fa; /* Light text in footer */
+    text-align: center;
+    padding: 25px 0;
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+footer a {
+    color: #ffc107; /* Yellow link in footer */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    header h1 {
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+
+    .royal-canin-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    body {
+        padding-top: 120px; /* Adjust for taller fixed header on mobile */
+    }
+
+    .phrase p {
+        font-size: 1.3em;
+    }
+
+    section h2 {
+        font-size: 1.8em;
+    }
+
+    .breeds-info ul li {
+        display: block; /* Stack list items on smaller screens */
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    body {
+        padding-top: 110px; /* Adjust for fixed header */
+    }
+
+    .royal-canin-button {
+        padding: 10px 20px;
+    }
+
+    .phrase p {
+        font-size: 1.2em;
+    }
+
+    section h2 {
+        font-size: 1.6em;
+    }
+
+     .breeds-info h2 + p {
+        font-size: 1em;
+    }
+
+    footer p {
+        font-size: 1em;
+    }
+}
