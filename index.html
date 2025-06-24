@@ -3,87 +3,346 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Templo dos Filhotes - Canil Especializado</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Templo dos Filhotes - Canil de Excelência</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .section-divider {
+            height: 32px;
+            width: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23988467'%3E%3Cpath d='M12 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm-6-4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm12 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4z'/%3E%3C/svg%3E") repeat-x;
+            background-size: 38px;
+            opacity: 0.3;
+        }
+        
+        .active-menu-item {
+            position: relative;
+        }
+        
+        .active-menu-item::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #B69C73;
+        }
+        
+        .hero-overlay {
+            background: rgba(0, 0, 0, 0.48);
+            background: linear-gradient(90deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.32) 50%, rgba(0,0,0,0.55) 100%);
+        }
+        
+        .card-gradient {
+            background: linear-gradient(135deg, #F8F8F8 0%, #f0f0f0 100%);
+        }
+        
+        .card-shadow {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                padding-top: 100px;
+                padding-bottom: 80px;
+            }
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <div class="content-container header-content">
-            <h1>Templo dos Filhotes</h1>
-            <a href="https://www.royalcanin.com/br/" target="_blank" class="royal-canin-button">Parceria Royal Canin</a>
+<body class="bg-[#EAD2B0] text-[#442C25] font-sans">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-[#F8F8F6] shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-paw text-[#B69C73] text-xl"></i>
+                <a href="#home" class="text-xl font-bold text-[#442C25]">Templo dos Filhotes</a>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link active-menu-item">Home</a>
+                <a href="#filhotes" class="nav-link">Nossos Filhotes</a>
+                <a href="#sobre" class="nav-link">Sobre Nós</a>
+                <a href="#condicoes" class="nav-link">Condições</a>
+                <a href="#contato" class="nav-link">Contato</a>
+            </div>
+            <button class="md:hidden text-[#442C25]">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
         </div>
-    </header>
+    </nav>
 
-    <section class="hero-phrase"> <!-- Changed class for distinct styling -->
-        <img src="cachorros.jpg" alt="" class="hero-image">
-        <div class="hero-content">
-            <p>
-                A vida é boa... com cachorro é muito melhor.
-            </p>
-        </div>
-    </section>
-
-    <section class="breeds-section"> <!-- Changed class for distinct styling -->
-        <div class="content-container">
-            <h2 class="section-title">Nossas Raças</h2> <!-- Changed title -->
-            <div class="breeds-grid">
-                <div class="breed-card">
-                    <div class="breed-image-placeholder"></div>
-                    <h3>Golden Retriever</h3>
-                </div>
-                <div class="breed-card">
-                    <div class="breed-image-placeholder"></div>
-                    <h3>Poodle (Toy, Mini e Standard)</h3>
-                </div>
-                <div class="breed-card">
-                    <div class="breed-image-placeholder"></div>
-                    <h3>Bulldog Francês</h3>
-                </div>
-                <div class="breed-card">
-                    <div class="breed-image-placeholder"></div>
-                    <h3>Shih Tzu</h3>
-                </div>
-                <div class="breed-card">
-                    <div class="breed-image-placeholder"></div>
-                    <h3>Yorkshire Terrier</h3>
-                </div>
-                <div class="breed-card">
-                    <div class="breed-image-placeholder"></div>
-                    <h3>Lhasa Apso</h3>
-                </div>
-                <div class="breed-card">
-                    <div class="breed-image-placeholder"></div>
-                    <h3>Spitz Alemão (Lulu da Pomerânia)</h3>
-                </div>
-                <div class="breed-card">
-                    <div class="breed-image-placeholder"></div>
-                    <h3>Pinscher</h3>
-                </div>
-                <div class="breed-card">
-                    <div class="breed-image-placeholder"></div>
-                    <h3>Chihuahua</h3>
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-cover bg-center" style="background-image: url('cachorros.jpg');">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="container mx-auto px-4 py-32 hero-content relative z-10">
+            <div class="max-w-2xl">
+                <h1 class="text-4xl md:text-6xl font-bold text-[#F8F8F8] mb-4 drop-shadow-lg">Templo dos Filhotes</h1>
+                <p class="text-xl md:text-2xl text-[#F8F8F8] mb-8 drop-shadow-md">A vida é boa, com cachorro é melhor ainda</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://wa.me/5585992746113" target="_blank" rel="noopener noreferrer" class="bg-[#B69C73] hover:bg-[#988467] text-white font-bold py-3 px-4 md:py-4 md:px-8 rounded-full text-base md:text-lg inline-flex items-center gap-2 transition duration-300 justify-center text-center whitespace-nowrap overflow-hidden text-ellipsis">
+                        <i class="fab fa-whatsapp text-xl md:text-2xl"></i> WhatsApp: (85) 99274-6113
+                    </a>
+                    <a href="https://www.royalcanin.com/br" target="_blank" class="bg-white hover:bg-gray-100 text-[#442C25] font-bold py-3 px-6 rounded-full flex items-center gap-2 transition duration-300">
+                        <i class="fas fa-bone text-[#B69C73]"></i> Royal Canin
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="delivery-info-section"> <!-- Changed class for distinct styling -->
-        <div class="content-container">
-            <h2 class="section-title">Condições de Entrega</h2>
-            <p>Nossos filhotes são entregues com a primeira dose da vacina importada, vermifugados e com tratamento preventivo contra giárdia. Oferecemos suporte pós-entrega para adaptação do filhote e garantia de saúde conforme contrato.</p>
+    <!-- Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Nossos Filhotes -->
+    <section id="filhotes" class="py-16 bg-[#F8F8F8]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-[#442C25]">Nossos Filhotes</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Card 1 -->
+                    <div class="card-gradient rounded-xl p-6 card-shadow flex flex-col items-center h-full max-h-[340px]">
+                        <div class="flex flex-col items-center mb-3">
+                            <div class="w-full flex justify-center">
+                                <div class="w-full max-w-[220px] aspect-[16/10] rounded-xl border-2 border-[#B69C73] shadow-md mb-2 bg-white overflow-hidden flex items-center justify-center">
+                                    <img src="https://t3.ftcdn.net/jpg/11/67/92/74/240_F_1167927426_QeSXLS3HfRoMflrZVgMUWyDegasl0TSY.jpg" alt="Golden Retriever" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-bold text-[#442C25] mt-1">Golden Retriever</h3>
+                        </div>
+                        <p class="text-[#6F6456] text-center text-base leading-relaxed flex-grow">Filhotes dourados, carinhosos e cheios de energia. Companheiros perfeitos para famílias que buscam alegria e muito amor em casa.</p>
+                    </div>
+                    
+                    <!-- Card 2 -->
+                    <div class="card-gradient rounded-xl p-6 card-shadow flex flex-col items-center h-full max-h-[340px]">
+                        <div class="flex flex-col items-center mb-3">
+                            <div class="w-full flex justify-center">
+                                <div class="w-full max-w-[220px] aspect-[16/10] rounded-xl border-2 border-[#B69C73] shadow-md mb-2 bg-white overflow-hidden flex items-center justify-center">
+                                    <img src="https://t4.ftcdn.net/jpg/02/95/40/09/240_F_295400975_kMzzHJH2QjmnxM2dhmIdHT261geQBacm.jpg" alt="Bulldog Francês" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-bold text-[#442C25] mt-1">Bulldog Francês</h3>
+                        </div>
+                        <p class="text-[#6F6456] text-center text-base leading-relaxed flex-grow">Pequenos no tamanho, mas gigantes no coração. O Bulldog Francês é ideal para quem quer um amigo divertido, leal e cheio de charme para o dia a dia.</p>
+                    </div>
+                    
+                    <!-- Card 3 -->
+                    <div class="card-gradient rounded-xl p-6 card-shadow flex flex-col items-center h-full max-h-[340px]">
+                        <div class="flex flex-col items-center mb-3">
+                            <div class="w-full flex justify-center">
+                                <div class="w-full max-w-[220px] aspect-[16/10] rounded-xl border-2 border-[#B69C73] shadow-md mb-2 bg-white overflow-hidden flex items-center justify-center">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/YellowLabradorLooking_new.jpg" alt="Labrador" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-bold text-[#442C25] mt-1">Labrador</h3>
+                        </div>
+                        <p class="text-[#6F6456] text-center text-base leading-relaxed flex-grow">Labradores são pura felicidade: brincalhões, inteligentes e sempre prontos para agradar. Perfeitos para famílias com crianças e para quem adora passeios ao ar livre.</p>
+                    </div>
+                    
+                    <!-- Card 4 -->
+                    <div class="card-gradient rounded-xl p-6 card-shadow flex flex-col items-center h-full max-h-[340px]">
+                        <div class="flex flex-col items-center mb-3">
+                            <div class="w-full flex justify-center">
+                                <div class="w-full max-w-[220px] aspect-[16/10] rounded-xl border-2 border-[#B69C73] shadow-md mb-2 bg-white overflow-hidden flex items-center justify-center">
+                                    <img src="https://as1.ftcdn.net/v2/jpg/00/67/98/92/1000_F_67989298_V2oYLNzIzsbLmu87VcPxzQbxzCY9l7f7.jpg" alt="Poodle" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-bold text-[#442C25] mt-1">Poodle</h3>
+                        </div>
+                        <p class="text-[#6F6456] text-center text-base leading-relaxed flex-grow">Poodles são elegantes, inteligentes e muito afetuosos. Uma companhia doce, fácil de cuidar e que se adapta a qualquer lar com muito carinho.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <div class="content-container">
-            <p>Entre em contato e realize seu sonho!</p>
-            <p><a href="https://wa.me/5585992746113" target="_blank" class="whatsapp-link">WhatsApp: (85) 99274-6113</a></p>
-            <p class="kennel-name-footer">Templo dos Filhotes</p>
+    <!-- Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Sobre Nós -->
+    <section id="sobre" class="py-16 bg-[#EAD2B0]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-[#442C25]">Sobre Nós</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-[#F8F8F8] rounded-xl p-8 card-shadow">
+                    <p class="text-[#6F6456] mb-6">No <span class="text-[#B69C73] font-bold">Templo dos Filhotes</span>, dedicamos nossas vidas ao cuidado e criação responsável de cães. Acreditamos que cada filhote merece começar sua vida com amor, saúde e os melhores cuidados possíveis.</p>
+                    
+                    <p class="text-[#6F6456] mb-6">Nossa equipe é composta por veterinários, criadores e apaixonados por animais que trabalham incansavelmente para garantir que nossos filhotes sejam saudáveis, socializados e prontos para fazer parte de sua família.</p>
+                    
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-heart text-[#B69C73] mr-3 text-xl"></i>
+                        <p class="text-[#6F6456] font-semibold">Ética, transparência e amor pelos animais são nossos pilares fundamentais.</p>
+                    </div>
+                    
+                    <p class="text-[#6F6456]">Todos os nossos cães reprodutores são testados geneticamente e vivem em ambientes amplos e enriquecidos, recebendo atenção individualizada e cuidados veterinários de excelência.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Condições -->
+    <section id="condicoes" class="py-16 bg-[#F8F8F8]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-[#442C25]">Condições de Entrega</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white rounded-xl p-8 card-shadow">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-[#442C25] mb-4 flex items-center">
+                                <i class="fas fa-shield-alt text-[#B69C73] mr-2"></i> Saúde Garantida
+                            </h3>
+                            <ul class="text-[#6F6456] space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-[#B69C73] mr-2 mt-1"></i>
+                                    <span>Todos os filhotes são vacinados e vermifugados</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-[#B69C73] mr-2 mt-1"></i>
+                                    <span>Exames veterinários completos antes da entrega</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-[#B69C73] mr-2 mt-1"></i>
+                                    <span>Microchip de identificação</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-[#442C25] mb-4 flex items-center">
+                                <i class="fas fa-hands-helping text-[#B69C73] mr-2"></i> Acompanhamento
+                            </h3>
+                            <ul class="text-[#6F6456] space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-[#B69C73] mr-2 mt-1"></i>
+                                    <span>Orientação pós-adoção por nossa equipe</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-[#B69C73] mr-2 mt-1"></i>
+                                    <span>Guia completo de cuidados com o filhote</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-[#B69C73] mr-2 mt-1"></i>
+                                    <span>Desconto em consultas com nossos veterinários parceiros</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-8 bg-[#EAD2B0] bg-opacity-30 rounded-lg p-4 border border-[#B69C73] border-opacity-30">
+                        <p class="text-[#442C25] text-center font-medium">
+                            <i class="fas fa-info-circle text-[#B69C73] mr-2"></i>
+                            Todos os nossos filhotes são entregues com certificado de saúde, carteira de vacinação atualizada e kit de boas-vindas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Contato -->
+    <section id="contato" class="py-16 bg-[#EAD2B0]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-[#442C25]">Peça no Site!</h2>
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-[#F8F8F8] rounded-xl p-8 card-shadow text-center">
+                    <p class="text-xl text-[#6F6456] mb-8">Fale conosco para adotar seu novo melhor amigo!</p>
+                    
+                    <div class="flex flex-col items-center space-y-6">
+                        <a href="https://wa.me/5585992746113" target="_blank" rel="noopener noreferrer" class="bg-[#B69C73] hover:bg-[#988467] text-white font-bold py-3 px-4 md:py-4 md:px-8 rounded-full text-base md:text-lg inline-flex items-center gap-2 transition duration-300 justify-center text-center whitespace-nowrap overflow-hidden text-ellipsis">
+                            <i class="fab fa-whatsapp text-xl md:text-2xl"></i> WhatsApp: (85) 99274-6113
+                        </a>
+                        
+                        <div class="flex space-x-6 mt-4">
+                            <a href="#" class="bg-[#442C25] text-white p-3 rounded-full hover:bg-opacity-90 transition duration-300">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            <a href="#" class="bg-[#442C25] text-white p-3 rounded-full hover:bg-opacity-90 transition duration-300">
+                                <i class="fab fa-facebook-f text-xl"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="mt-6">
+                            <p class="text-[#6F6456] mb-3">Parceiros:</p>
+                            <a href="https://www.royalcanin.com/br" target="_blank" class="inline-block bg-white hover:bg-gray-100 text-[#442C25] font-bold py-2 px-6 rounded-full flex items-center gap-2 transition duration-300 border border-[#B69C73]">
+                                <i class="fas fa-bone text-[#B69C73]"></i> Royal Canin
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#442C25] text-[#F8F8F8] py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <i class="fas fa-paw text-[#B69C73] mr-2 text-xl"></i>
+                    <span class="text-xl font-bold">Templo dos Filhotes</span>
+                </div>
+                <div class="text-sm text-[#B69C73]">
+                    © 2023 Templo dos Filhotes. Todos os direitos reservados.
+                </div>
+            </div>
         </div>
     </footer>
 
+    <script>
+        // Scroll Spy for navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            window.addEventListener('scroll', function() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (pageYOffset >= (sectionTop - 200)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active-menu-item');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active-menu-item');
+                    }
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active menu item
+                    navLinks.forEach(link => {
+                        link.classList.remove('active-menu-item');
+                    });
+                    this.classList.add('active-menu-item');
+                });
+            });
+            
+            // Mobile menu toggle (would need more implementation for full mobile menu)
+            document.querySelector('button.md\\:hidden').addEventListener('click', function() {
+                alert('Menu mobile será implementado aqui!');
+            });
+        });
+    </script>
 </body>
 </html>
